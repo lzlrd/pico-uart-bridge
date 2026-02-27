@@ -3,6 +3,7 @@
  * Copyright 2021 Álvaro Fernández Rojas <noltari@gmail.com>
  */
 
+#include <hardware/clocks.h>
 #include <hardware/irq.h>
 #include <hardware/structs/sio.h>
 #include <hardware/uart.h>
@@ -300,6 +301,8 @@ void init_uart_data(uint8_t itf)
 int main(void)
 {
 	int itf;
+
+	set_sys_clock_khz(250000, false);
 
 	usbd_serial_init();
 
