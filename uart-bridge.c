@@ -302,7 +302,7 @@ int main(void)
 {
 	int itf;
 
-	set_sys_clock_khz(264000, false);
+	set_sys_clock_khz(250000, false);
 
 	usbd_serial_init();
 
