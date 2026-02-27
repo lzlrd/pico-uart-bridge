@@ -302,7 +302,6 @@ int main(void)
 {
 	int itf;
 
-	/* Overclock to 264 MHz for improved USB and UART throughput */
 	set_sys_clock_khz(264000, false);
 
 	usbd_serial_init();
