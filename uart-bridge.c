@@ -3,6 +3,7 @@
  * Copyright 2021 Álvaro Fernández Rojas <noltari@gmail.com>
  */
 
+#include <hardware/clocks.h>
 #include <hardware/irq.h>
 #include <hardware/structs/sio.h>
 #include <hardware/uart.h>
@@ -300,6 +301,9 @@ void init_uart_data(uint8_t itf)
 int main(void)
 {
 	int itf;
+
+	/* Overclock to 264 MHz for improved USB and UART throughput */
+	set_sys_clock_khz(264000, true);
 
 	usbd_serial_init();
 
